@@ -14,10 +14,22 @@
  const projectData = require("./modules/projects");
  
  const app = express();
- 
+ const PORT = process.env.port || 8080;
  // Serve static files from the 'public' folder
  app.use(express.static('public'));
- 
+
+ projectData.initialize()
+    .then(() => {
+        // Start the server after initialization is complete
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+            console.log(`Server is running on  http://localhost:${PORT}`);
+        });
+    })
+    .catch(err => {
+        console.error("Failed to initialize data:", err);
+  });
+
  // Routes for home page
  app.get("/", (req, res) => {
    res.sendFile(path.join(__dirname, "views", "home.html"));
