@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "tw:build": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch"
+  "tw:build": "npx tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch",
+  "build": "npx tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch"
 },
   "author": "",
   "license": "ISC",
