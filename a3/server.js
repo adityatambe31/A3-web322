@@ -32,7 +32,7 @@
 
  // Routes for home page
  app.get("/", (req, res) => {
-   res.sendFile(path.join(__dirname, "views", "home.html"));
+   res.sendFile(path.join(__dirname,'/views/home.html'));
  });
  
  // Routes for about page
